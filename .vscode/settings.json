@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    # 拡張子なしファイルを拡張機能で認識させるための設定
+    # freeradius unlangを使用
+    "*[!.]": "unlang"
+  }
+}

@@ -1,0 +1,299 @@
+[
+    {
+        "label": "radiusd",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "radiusd",
+        "description": "radiusd",
+        "detail": "radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "instantiate",
+        "kind": 2,
+        "importPath": "freeradius_config.3.0.mods-config.python3.example",
+        "description": "freeradius_config.3.0.mods-config.python3.example",
+        "peekOfCode": "def instantiate(p):\n  print(\"*** instantiate ***\")\n  print(p)\n  # return 0 for success or -1 for failure\ndef authorize(p):\n  print(\"*** authorize ***\")\n  radiusd.radlog(radiusd.L_INFO, '*** radlog call in authorize ***')\n  print()\n  print(p)\n  print()",
+        "detail": "freeradius_config.3.0.mods-config.python3.example",
+        "documentation": {}
+    },
+    {
+        "label": "authorize",
+        "kind": 2,
+        "importPath": "freeradius_config.3.0.mods-config.python3.example",
+        "description": "freeradius_config.3.0.mods-config.python3.example",
+        "peekOfCode": "def authorize(p):\n  print(\"*** authorize ***\")\n  radiusd.radlog(radiusd.L_INFO, '*** radlog call in authorize ***')\n  print()\n  print(p)\n  print()\n  print(radiusd.config)\n  return radiusd.RLM_MODULE_OK\ndef preacct(p):\n  print(\"*** preacct ***\")",
+        "detail": "freeradius_config.3.0.mods-config.python3.example",
+        "documentation": {}
+    },
+    {
+        "label": "preacct",
+        "kind": 2,
+        "importPath": "freeradius_config.3.0.mods-config.python3.example",
+        "description": "freeradius_config.3.0.mods-config.python3.example",
+        "peekOfCode": "def preacct(p):\n  print(\"*** preacct ***\")\n  print(p)\n  return radiusd.RLM_MODULE_OK\ndef accounting(p):\n  print(\"*** accounting ***\")\n  radiusd.radlog(radiusd.L_INFO, '*** radlog call in accounting (0) ***')\n  print()\n  print(p)\n  return radiusd.RLM_MODULE_OK",
+        "detail": "freeradius_config.3.0.mods-config.python3.example",
+        "documentation": {}
+    },
+    {
+        "label": "accounting",
+        "kind": 2,
+        "importPath": "freeradius_config.3.0.mods-config.python3.example",
+        "description": "freeradius_config.3.0.mods-config.python3.example",
+        "peekOfCode": "def accounting(p):\n  print(\"*** accounting ***\")\n  radiusd.radlog(radiusd.L_INFO, '*** radlog call in accounting (0) ***')\n  print()\n  print(p)\n  return radiusd.RLM_MODULE_OK\ndef pre_proxy(p):\n  print(\"*** pre_proxy ***\")\n  print(p)\n  return radiusd.RLM_MODULE_OK",
+        "detail": "freeradius_config.3.0.mods-config.python3.example",
+        "documentation": {}
+    },
+    {
+        "label": "pre_proxy",
+        "kind": 2,
+        "importPath": "freeradius_config.3.0.mods-config.python3.example",
+        "description": "freeradius_config.3.0.mods-config.python3.example",
+        "peekOfCode": "def pre_proxy(p):\n  print(\"*** pre_proxy ***\")\n  print(p)\n  return radiusd.RLM_MODULE_OK\ndef post_proxy(p):\n  print(\"*** post_proxy ***\")\n  print(p)\n  return radiusd.RLM_MODULE_OK\ndef post_auth(p):\n  print(\"*** post_auth ***\")",
+        "detail": "freeradius_config.3.0.mods-config.python3.example",
+        "documentation": {}
+    },
+    {
+        "label": "post_proxy",
+        "kind": 2,
+        "importPath": "freeradius_config.3.0.mods-config.python3.example",
+        "description": "freeradius_config.3.0.mods-config.python3.example",
+        "peekOfCode": "def post_proxy(p):\n  print(\"*** post_proxy ***\")\n  print(p)\n  return radiusd.RLM_MODULE_OK\ndef post_auth(p):\n  print(\"*** post_auth ***\")\n  # This is true when using pass_all_vps_dict\n  if type(p) is dict:\n    print(\"Request:\", p[\"request\"])\n    print(\"Reply:\", p[\"reply\"])",
+        "detail": "freeradius_config.3.0.mods-config.python3.example",
+        "documentation": {}
+    },
+    {
+        "label": "post_auth",
+        "kind": 2,
+        "importPath": "freeradius_config.3.0.mods-config.python3.example",
+        "description": "freeradius_config.3.0.mods-config.python3.example",
+        "peekOfCode": "def post_auth(p):\n  print(\"*** post_auth ***\")\n  # This is true when using pass_all_vps_dict\n  if type(p) is dict:\n    print(\"Request:\", p[\"request\"])\n    print(\"Reply:\", p[\"reply\"])\n    print(\"Config:\", p[\"config\"])\n    print(\"State:\", p[\"session-state\"])\n    print(\"Proxy-Request:\", p[\"proxy-request\"])\n    print(\"Proxy-Reply:\", p[\"proxy-reply\"])",
+        "detail": "freeradius_config.3.0.mods-config.python3.example",
+        "documentation": {}
+    },
+    {
+        "label": "recv_coa",
+        "kind": 2,
+        "importPath": "freeradius_config.3.0.mods-config.python3.example",
+        "description": "freeradius_config.3.0.mods-config.python3.example",
+        "peekOfCode": "def recv_coa(p):\n  print(\"*** recv_coa ***\")\n  print(p)\n  return radiusd.RLM_MODULE_OK\ndef send_coa(p):\n  print(\"*** send_coa ***\")\n  print(p)\n  return radiusd.RLM_MODULE_OK\ndef detach(p):\n  print(\"*** goodbye from example.py ***\")",
+        "detail": "freeradius_config.3.0.mods-config.python3.example",
+        "documentation": {}
+    },
+    {
+        "label": "send_coa",
+        "kind": 2,
+        "importPath": "freeradius_config.3.0.mods-config.python3.example",
+        "description": "freeradius_config.3.0.mods-config.python3.example",
+        "peekOfCode": "def send_coa(p):\n  print(\"*** send_coa ***\")\n  print(p)\n  return radiusd.RLM_MODULE_OK\ndef detach(p):\n  print(\"*** goodbye from example.py ***\")\n  return radiusd.RLM_MODULE_OK",
+        "detail": "freeradius_config.3.0.mods-config.python3.example",
+        "documentation": {}
+    },
+    {
+        "label": "detach",
+        "kind": 2,
+        "importPath": "freeradius_config.3.0.mods-config.python3.example",
+        "description": "freeradius_config.3.0.mods-config.python3.example",
+        "peekOfCode": "def detach(p):\n  print(\"*** goodbye from example.py ***\")\n  return radiusd.RLM_MODULE_OK",
+        "detail": "freeradius_config.3.0.mods-config.python3.example",
+        "documentation": {}
+    },
+    {
+        "label": "radlog",
+        "kind": 2,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "def radlog(level, msg):\n    import sys\n    sys.stdout.write(msg + '\\n')",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "RLM_MODULE_REJECT",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "RLM_MODULE_REJECT = 0\nRLM_MODULE_FAIL = 1\nRLM_MODULE_OK = 2\nRLM_MODULE_HANDLED = 3\nRLM_MODULE_INVALID = 4\nRLM_MODULE_USERLOCK = 5\nRLM_MODULE_NOTFOUND = 6\nRLM_MODULE_NOOP = 7\nRLM_MODULE_UPDATED = 8\nRLM_MODULE_NUMCODES = 9",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "RLM_MODULE_FAIL",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "RLM_MODULE_FAIL = 1\nRLM_MODULE_OK = 2\nRLM_MODULE_HANDLED = 3\nRLM_MODULE_INVALID = 4\nRLM_MODULE_USERLOCK = 5\nRLM_MODULE_NOTFOUND = 6\nRLM_MODULE_NOOP = 7\nRLM_MODULE_UPDATED = 8\nRLM_MODULE_NUMCODES = 9\n# from log.h",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "RLM_MODULE_OK",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "RLM_MODULE_OK = 2\nRLM_MODULE_HANDLED = 3\nRLM_MODULE_INVALID = 4\nRLM_MODULE_USERLOCK = 5\nRLM_MODULE_NOTFOUND = 6\nRLM_MODULE_NOOP = 7\nRLM_MODULE_UPDATED = 8\nRLM_MODULE_NUMCODES = 9\n# from log.h\nL_AUTH = 2",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "RLM_MODULE_HANDLED",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "RLM_MODULE_HANDLED = 3\nRLM_MODULE_INVALID = 4\nRLM_MODULE_USERLOCK = 5\nRLM_MODULE_NOTFOUND = 6\nRLM_MODULE_NOOP = 7\nRLM_MODULE_UPDATED = 8\nRLM_MODULE_NUMCODES = 9\n# from log.h\nL_AUTH = 2\nL_INFO = 3",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "RLM_MODULE_INVALID",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "RLM_MODULE_INVALID = 4\nRLM_MODULE_USERLOCK = 5\nRLM_MODULE_NOTFOUND = 6\nRLM_MODULE_NOOP = 7\nRLM_MODULE_UPDATED = 8\nRLM_MODULE_NUMCODES = 9\n# from log.h\nL_AUTH = 2\nL_INFO = 3\nL_ERR = 4",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "RLM_MODULE_USERLOCK",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "RLM_MODULE_USERLOCK = 5\nRLM_MODULE_NOTFOUND = 6\nRLM_MODULE_NOOP = 7\nRLM_MODULE_UPDATED = 8\nRLM_MODULE_NUMCODES = 9\n# from log.h\nL_AUTH = 2\nL_INFO = 3\nL_ERR = 4\nL_WARN = 5",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "RLM_MODULE_NOTFOUND",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "RLM_MODULE_NOTFOUND = 6\nRLM_MODULE_NOOP = 7\nRLM_MODULE_UPDATED = 8\nRLM_MODULE_NUMCODES = 9\n# from log.h\nL_AUTH = 2\nL_INFO = 3\nL_ERR = 4\nL_WARN = 5\nL_PROXY = 6",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "RLM_MODULE_NOOP",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "RLM_MODULE_NOOP = 7\nRLM_MODULE_UPDATED = 8\nRLM_MODULE_NUMCODES = 9\n# from log.h\nL_AUTH = 2\nL_INFO = 3\nL_ERR = 4\nL_WARN = 5\nL_PROXY = 6\nL_ACCT = 7",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "RLM_MODULE_UPDATED",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "RLM_MODULE_UPDATED = 8\nRLM_MODULE_NUMCODES = 9\n# from log.h\nL_AUTH = 2\nL_INFO = 3\nL_ERR = 4\nL_WARN = 5\nL_PROXY = 6\nL_ACCT = 7\nL_DBG = 16",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "RLM_MODULE_NUMCODES",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "RLM_MODULE_NUMCODES = 9\n# from log.h\nL_AUTH = 2\nL_INFO = 3\nL_ERR = 4\nL_WARN = 5\nL_PROXY = 6\nL_ACCT = 7\nL_DBG = 16\nL_DBG_WARN = 17",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "L_AUTH",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "L_AUTH = 2\nL_INFO = 3\nL_ERR = 4\nL_WARN = 5\nL_PROXY = 6\nL_ACCT = 7\nL_DBG = 16\nL_DBG_WARN = 17\nL_DBG_ERR = 18\nL_DBG_WARN_REQ = 19",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "L_INFO",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "L_INFO = 3\nL_ERR = 4\nL_WARN = 5\nL_PROXY = 6\nL_ACCT = 7\nL_DBG = 16\nL_DBG_WARN = 17\nL_DBG_ERR = 18\nL_DBG_WARN_REQ = 19\nL_DBG_ERR_REQ = 20",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "L_ERR",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "L_ERR = 4\nL_WARN = 5\nL_PROXY = 6\nL_ACCT = 7\nL_DBG = 16\nL_DBG_WARN = 17\nL_DBG_ERR = 18\nL_DBG_WARN_REQ = 19\nL_DBG_ERR_REQ = 20\n# log function",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "L_WARN",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "L_WARN = 5\nL_PROXY = 6\nL_ACCT = 7\nL_DBG = 16\nL_DBG_WARN = 17\nL_DBG_ERR = 18\nL_DBG_WARN_REQ = 19\nL_DBG_ERR_REQ = 20\n# log function\ndef radlog(level, msg):",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "L_PROXY",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "L_PROXY = 6\nL_ACCT = 7\nL_DBG = 16\nL_DBG_WARN = 17\nL_DBG_ERR = 18\nL_DBG_WARN_REQ = 19\nL_DBG_ERR_REQ = 20\n# log function\ndef radlog(level, msg):\n    import sys",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "L_ACCT",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "L_ACCT = 7\nL_DBG = 16\nL_DBG_WARN = 17\nL_DBG_ERR = 18\nL_DBG_WARN_REQ = 19\nL_DBG_ERR_REQ = 20\n# log function\ndef radlog(level, msg):\n    import sys\n    sys.stdout.write(msg + '\\n')",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "L_DBG",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "L_DBG = 16\nL_DBG_WARN = 17\nL_DBG_ERR = 18\nL_DBG_WARN_REQ = 19\nL_DBG_ERR_REQ = 20\n# log function\ndef radlog(level, msg):\n    import sys\n    sys.stdout.write(msg + '\\n')",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "L_DBG_WARN",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "L_DBG_WARN = 17\nL_DBG_ERR = 18\nL_DBG_WARN_REQ = 19\nL_DBG_ERR_REQ = 20\n# log function\ndef radlog(level, msg):\n    import sys\n    sys.stdout.write(msg + '\\n')",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "L_DBG_ERR",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "L_DBG_ERR = 18\nL_DBG_WARN_REQ = 19\nL_DBG_ERR_REQ = 20\n# log function\ndef radlog(level, msg):\n    import sys\n    sys.stdout.write(msg + '\\n')",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "L_DBG_WARN_REQ",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "L_DBG_WARN_REQ = 19\nL_DBG_ERR_REQ = 20\n# log function\ndef radlog(level, msg):\n    import sys\n    sys.stdout.write(msg + '\\n')",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    },
+    {
+        "label": "L_DBG_ERR_REQ",
+        "kind": 5,
+        "importPath": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "description": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "peekOfCode": "L_DBG_ERR_REQ = 20\n# log function\ndef radlog(level, msg):\n    import sys\n    sys.stdout.write(msg + '\\n')",
+        "detail": "freeradius_config.3.0.mods-config.python3.radiusd",
+        "documentation": {}
+    }
+]
