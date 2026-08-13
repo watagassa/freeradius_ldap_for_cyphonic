@@ -19,7 +19,7 @@ listen {
 		ca_file = /etc/ssl/certs/ca-certificates.crt
 		dh_file = ${certdir}/dh
 		fragment_size = 8192
-		ca_path = ${cadir}
+		ca_path = ${certdir}
 		cipher_list = "DEFAULT"
 		cache {
 			enable = no
@@ -54,10 +54,10 @@ listen {
 		# Moonshot tends to distribute certs separate from keys
 		private_key_file = ${certdir}/server.key
 		certificate_file = ${certdir}/server.pem
-		ca_file = ${cadir}/ca.pem
+		ca_file = ${certdir}/ca.pem
 		dh_file = ${certdir}/dh
 		fragment_size = 8192
-		ca_path = ${cadir}
+		ca_path = ${certdir}
 		cipher_list = "DEFAULT"
 		cache {
 			enable = no

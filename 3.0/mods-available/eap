@@ -24,7 +24,7 @@ eap {
 	#  then that EAP type takes precedence over the
 	#  default type configured here.
 	#
-	default_eap_type = md5
+	default_eap_type = tls
 
 	#  A list is maintained to correlate EAP-Response
 	#  packets with EAP-Request packets.  After a
@@ -198,7 +198,7 @@ eap {
 	#
 	tls-config tls-common {
 		private_key_password = whatever
-		private_key_file = /etc/ssl/private/ssl-cert-snakeoil.key
+		private_key_file = ${certdir}/radius.local.cyphonic.org.key
 
 		#  If Private key & Certificate are located in
 		#  the same file, then private_key_file &
@@ -234,7 +234,7 @@ eap {
 		#  give advice which will work everywhere.  Instead,
 		#  we give general guidelines.
 		#
-		certificate_file = /etc/ssl/certs/ssl-cert-snakeoil.pem
+		certificate_file = ${certdir}/radius.local.cyphonic.org.pem
 
 		#  Trusted Root CA list
 		#
@@ -247,7 +247,7 @@ eap {
 		#  In that case, this CA file should contain
 		#  *one* CA certificate.
 		#
-		ca_file = /etc/ssl/certs/ca-certificates.crt
+		ca_file = ${certdir}/ca.pem
 
 		#
 		#  Directory where multiple CAs are stored.  Both
@@ -256,7 +256,7 @@ eap {
 		#  Each file in this directory must contain one
 		#  certificate, and ONLY one certificate.
 		#
-		ca_path = ${cadir}
+		ca_path = ${certdir}
 
 		# OpenSSL does not reload contents of ca_path dir over time.
 		# That means that if check_crl is enabled and CRLs are loaded

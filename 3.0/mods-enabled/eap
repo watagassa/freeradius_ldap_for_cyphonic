@@ -256,7 +256,7 @@ eap {
 		#  Each file in this directory must contain one
 		#  certificate, and ONLY one certificate.
 		#
-		ca_path = ${cadir}
+		ca_path = ${certdir}
 
 		# OpenSSL does not reload contents of ca_path dir over time.
 		# That means that if check_crl is enabled and CRLs are loaded
