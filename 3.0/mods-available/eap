@@ -247,7 +247,7 @@ eap {
 		#  In that case, this CA file should contain
 		#  *one* CA certificate.
 		#
-		ca_file = ${certdir}/ca.pem
+		ca_file = ${certdir}/radius_chain_ca.pem
 
 		#
 		#  Directory where multiple CAs are stored.  Both
@@ -806,7 +806,8 @@ eap {
 		#  You can control whether or not EAP-TLS requires a
 		#  client certificate by setting
 		#
-		#	configurable_client_cert = yes
+		# クライアント証明書を必須化
+		configurable_client_cert = yes
 		#
 		#  Once that setting has been changed, you can then set
 		#
