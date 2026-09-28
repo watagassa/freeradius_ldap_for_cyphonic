@@ -97,6 +97,27 @@ authorize {
 	# groupmembership_filter = "(&(objectClass=group)(member=%{control:Ldap-UserDn}))"
 
 #	ldap
+# 	TLS-Client-Cert-Serialが存在する場合ldapモジュールを使用する
+    if (&TLS-Client-Cert-Serial) {
+        ldap
+        if (ok || updated) {
+            update control {
+                Auth-Type := Accept
+            }
+        } else {
+            update control {
+                Auth-Type := Reject
+            }
+            update reply {
+                Reply-Message = "Certificate serial number not authorized in LDAP."
+            }
+		}
+    } else {
+        update control {
+            Auth-Type := Reject
+        }
+    }
+
 
 	# Now let's test membership of an LDAP group (the ldap bind user will
 	# need permission to read this group membership):

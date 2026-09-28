@@ -16,12 +16,12 @@ ldap {
 	#  - ldaps:// (LDAP over SSL)
 	#  - ldapi:// (LDAP over Unix socket)
 	#  - ldapc:// (Connectionless LDAP)
-	server = '127.0.0.1'
+	server = 'ldaps://ldap.local.cyphonic.org'
 #	server = 'ldap.rrdns.example.org'
 #	server = 'ldap.rrdns.example.org'
 
 	#  Port to connect on, defaults to 389, will be ignored for LDAP URIs.
-	port = 10389
+	port = 636
 
 	#  Administrator account for searching and possibly modifying.
 	#  If using SASL + KRB5 these should be commented out.
@@ -219,7 +219,8 @@ ldap {
 		#  For Active Directory, you should use
 		#  "samaccountname=" instead of "uid="
 		#
-		filter = "(uid=%{%{Stripped-User-Name}:-%{User-Name}})"
+		filter = "(serialNumber=%{TLS-Client-Cert-Serial})"
+		# filter = "(&(uid=%{TLS-Client-Cert-Common-Name)(serialNumber=%{TLS-Client-Cert-Serial}))"
 
 		#  For Active Directory nested group, you should comment out the previous 'filter = ...'
 		#  and use the below. Where 'group' is the group you are querying for.
@@ -612,13 +613,13 @@ ldap {
 		# The StartTLS operation is supposed to be
 		# used with normal ldap connections instead of
 		# using ldaps (port 636) connections
-#		start_tls = yes
+		start_tls = no
 
-		ca_file	= ${certdir}/ca.pem
+		ca_file	= ${certdir}/radius_chain_ca.pem
 
-		ca_path	= ${certdir}
-		certificate_file = ${certdir}/radius.local.cyphonic.org.pem
-		private_key_file = ${certdir}/radius.local.cyphonic.org.key
+		# ca_path	= ${certdir}
+		certificate_file = ${certdir}/radius_client_cert.pem
+		private_key_file = ${certdir}/radius_client_private.key
 		random_file = /dev/urandom
 
  		#  Certificate Verification requirements.  Can be:
@@ -632,7 +633,7 @@ ldap {
 		#  The default is libldap's default, which varies based
 		#  on the contents of ldap.conf.
 
-#		require_cert	= 'demand'
+		require_cert	= 'demand'
 
 		#
 		#  Check the CRL, as with the EAP module.
